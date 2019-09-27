@@ -9,8 +9,8 @@ const server = new ApolloServer({
   resolvers,
   subscriptions: {
     onConnect: (connectionParams, webSocket) => {
-      numWSConnections += 1;
-      console.table(numWSConnections);
+      numSubscription += 1;
+      console.table(`${numSubscription} - ${webSocket}`);
     },
   },
   cache: new RedisCache({
