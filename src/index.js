@@ -10,9 +10,9 @@ const server = new ApolloServer({
   subscriptions: {
     onConnect: (connectionParams, webSocket) => {
       numSubscription += 1;
-      console.table(numSubscription);
-      console.log(JSON.stringify(connectionParams));
-      console.log(JSON.stringify(webSocket));
+      console.log(`Number of websocket connections: ${numSubscription}`);
+      console.table(JSON.stringify(connectionParams));
+      console.table(JSON.stringify(webSocket));
       console.log("========================");
     },
   },
