@@ -10,10 +10,10 @@ const server = new ApolloServer({
   subscriptions: {
     onConnect: (connectionParams, webSocket) => {
       numSubscription += 1;
-      console.log(`Number of websocket connections: ${numSubscription}`);
-      console.table(JSON.stringify(connectionParams));
-      console.table(JSON.stringify(webSocket));
-      console.log("========================");
+      console.log(`Number of active WebSocket connections: ${numSubscription}`);
+      //console.table(JSON.stringify(connectionParams));
+      //console.table(JSON.stringify(webSocket));
+      console.log("+++++==================================+++++");
     },
   },
   cache: new RedisCache({
